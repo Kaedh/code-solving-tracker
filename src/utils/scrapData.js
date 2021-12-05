@@ -8,7 +8,7 @@ const getAllExercicesPerPage = () => {
     const challengeId = node.children[0]?.textContent;
     const challengeUrl = node.children[2]?.children[0]?.href;
 
-    return { codeId: challengeId, codeUrl: challengeUrl }
+    return { codeid: challengeId, codeurl: challengeUrl, solved: false, activechallenge: false }
   })
 
   data.shift()
@@ -20,8 +20,8 @@ const getAllExercicesPerPage = () => {
 const sanitizeDataScrapped = (data) => {
 
   const sanitizedData = data.map( exercise => {
-    if (exercise.codeId != "") {
-      exercise.codeId = exercise.codeId.slice(1).trim()
+    if (exercise.codeid != "") {
+      exercise.codeid = exercise.codeid.slice(1).trim()
 
       return exercise
     }
@@ -50,7 +50,7 @@ const main = async () => {
 
   const sanitizedData = sanitizeDataScrapped(data);
 
-  fs.writeFile("./data/data.json", JSON.stringify({...sanitizedData}), (err) => {
+  fs.writeFile("./src/data/seeds/raw-data.json", JSON.stringify({...sanitizedData}), (err) => {
     if (err) console.log(err)
   })
 

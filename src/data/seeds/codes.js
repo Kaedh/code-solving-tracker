@@ -8,6 +8,8 @@ const seedAllCodeScraped = (knexInstance) => {
     return data[key];
   })
   
+  console.log(formatedData)
+
   return knexInstance('tbcode').insert(formatedData);
 }
 

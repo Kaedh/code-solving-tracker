@@ -2,9 +2,10 @@
 exports.up = function(knex) {
   knex.schema.createTable("tbcode", table => {
     table.increments("id");
-    table.integer("codeId").notNullable();
-    table.string("codeUrl").notNullable();
+    table.integer("codeid").notNullable();
+    table.string("codeurl").notNullable();
     table.boolean("solved");
+    table.boolean("activechallenge");
   })
 };
 
