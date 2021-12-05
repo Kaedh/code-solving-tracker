@@ -50,7 +50,7 @@ const main = async () => {
 
   const sanitizedData = sanitizeDataScrapped(data);
 
-  fs.writeFile("data.json", JSON.stringify({...sanitizedData}), (err) => {
+  fs.writeFile("./data/data.json", JSON.stringify({...sanitizedData}), (err) => {
     if (err) console.log(err)
   })
 
