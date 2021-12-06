@@ -1,11 +1,16 @@
 var express = require('express');
-const { getChallenge } = require("../services/code.solving.services");
+const { getChallenge, markAsSolved } = require("../services/code.solving.services");
 var router = express.Router();
 
+const mostraAlert = () => {
+  console.log("Deu certo")
+}
+
 /* GET home page. */
-router.get('/', function(req, res) {
-  getChallenge()
-  res.render('index', { title: 'Express' });
+router.get('/', async function(req, res) {
+  const { codeurl, codeid } = await getChallenge()
+
+  res.render('index', { title: 'Express', codeurl, codeid  });
 });
 
 module.exports = router;

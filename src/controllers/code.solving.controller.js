@@ -1,5 +1,0 @@
-/*
-  marcar como resolvido
-  receber um desafio nao resolvido aleatorio
-
-*/
