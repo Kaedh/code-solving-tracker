@@ -8,9 +8,17 @@ const mostraAlert = () => {
 
 /* GET home page. */
 router.get('/', async function(req, res) {
-  const { codeurl, codeid } = await getChallenge()
+  const { codeurl, codeid, id } = await getChallenge()
+  res.render('index', { title: 'Code Solving Tracker', codeurl, codeid, id });
+});
 
-  res.render('index', { title: 'Express', codeurl, codeid  });
+router.get('/markAsSolved/:codedbid', async function(req, res) {
+ 
+  const { codedbid }  = req.params
+  await markAsSolved(codedbid)
+
+  res.redirect("/")
+
 });
 
 module.exports = router;

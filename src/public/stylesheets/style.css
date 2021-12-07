@@ -54,4 +54,8 @@ h1 {
   justify-content: center;
 }
 
+.buttons a:hover { background-color: #b17793; }
+
 .green { background-color: #B5C9C3 !important; }
+
+.green:hover { background-color: #7cb0a0 !important; }

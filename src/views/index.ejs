@@ -10,10 +10,13 @@
       <h1>Code Solving Tracker</h1>
 
       <div class="buttons">
-        <a id="<%= codeid %>" href="<%= codeurl %>" >Tentar agora</a>
-        <a class="green" href="#">Resolvido</a>
+        <a id="<%= codeid %>" href="<%= codeurl %>" target="_blank" >Tentar agora</a>
+        <a class="green" href="#" onclick="markAsSolved(<%= id %>)" >Resolvido</a>
       </div>
 
     </div>
+
+    <script src="/javascripts/main.js" ></script>
+
   </body>
 </html>
